@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff6fb" />
+  <title>Happy Birthday, my dear ANGLE 🎂🌸</title>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #38333d;
+      background:
+        radial-gradient(circle at 12% 12%, rgba(255, 211, 231, .58), transparent 27%),
+        radial-gradient(circle at 88% 18%, rgba(218, 221, 255, .58), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(221, 247, 241, .45), transparent 30%),
+        linear-gradient(135deg, #fff8fb, #f8f5ff, #f2faff);
+      overflow-x: hidden;
+    }
+
+    .floating {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .floating span {
+      position: absolute;
+      bottom: -50px;
+      font-size: 19px;
+      opacity: .38;
+      animation: floatUp linear infinite;
+    }
+
+    .floating span:nth-child(1) { left: 8%; animation-duration: 12s; }
+    .floating span:nth-child(2) { left: 23%; animation-duration: 15s; animation-delay: 2s; }
+    .floating span:nth-child(3) { left: 45%; animation-duration: 11s; animation-delay: 4s; }
+    .floating span:nth-child(4) { left: 67%; animation-duration: 14s; animation-delay: 1s; }
+    .floating span:nth-child(5) { left: 86%; animation-duration: 13s; animation-delay: 5s; }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      15% { opacity: .38; }
+      100% { transform: translateY(-110vh) rotate(180deg); opacity: 0; }
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(900px, 92%);
+      margin: auto;
+      padding: 25px 0 35px;
+    }
+
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 740px;
+      padding: 56px 30px;
+      border-radius: 32px;
+      background: rgba(255,255,255,.72);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 20px 65px rgba(75, 55, 90, .13);
+      border: 1px solid rgba(255,255,255,.9);
+    }
+
+    .small {
+      font-family: Arial, sans-serif;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 11px;
+      color: #8b7e91;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(39px, 9vw, 72px);
+      line-height: 1.03;
+      font-weight: 500;
+      color: #423946;
+      margin-bottom: 18px;
+    }
+
+    .birthday-line {
+      font-size: clamp(19px, 4vw, 27px);
+      color: #756577;
+      margin-bottom: 23px;
+    }
+
+    .hero p {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.85;
+      color: #6e6672;
+      max-width: 585px;
+      margin: auto;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 29px;
+      border: none;
+      padding: 14px 25px;
+      border-radius: 999px;
+      background: #51475b;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      transition: .25s ease;
+      box-shadow: 0 8px 22px rgba(81,71,91,.2);
+      text-decoration: none;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      background: #3f3747;
+    }
+
+    .section {
+      padding: 55px 0;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 31px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: #443c48;
+    }
+
+    .section-subtitle {
+      font-family: Arial, sans-serif;
+      color: #817884;
+      margin-bottom: 29px;
+      font-size: 14px;
+    }
+
+    .memory {
+      background: rgba(255,255,255,.78);
+      border-radius: 25px;
+      padding: 32px 27px;
+      margin: 18px 0;
+      box-shadow: 0 10px 35px rgba(75,55,90,.08);
+      text-align: left;
+    }
+
+    .memory h3 {
+      font-size: 21px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: #514657;
+    }
+
+    .memory p {
+      font-family: Arial, sans-serif;
+      line-height: 1.88;
+      color: #69616e;
+    }
+
+    .thoughts {
+      display: grid;
+      gap: 14px;
+      max-width: 680px;
+      margin: auto;
+    }
+
+    .thought-card {
+      background: rgba(255,255,255,.79);
+      border-radius: 21px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(75,55,90,.07);
+    }
+
+    .thought-button {
+      width: 100%;
+      margin: 0;
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      color: #514657;
+      box-shadow: none;
+      text-align: left;
+      font-family: Georgia, serif;
+      font-size: 17px;
+      padding: 20px 22px;
+      cursor: pointer;
+    }
+
+    .thought-button:hover {
+      background: rgba(245,238,247,.65);
+      color: #514657;
+      transform: none;
+    }
+
+    .thought-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .5s ease, padding .5s ease;
+      padding: 0 22px;
+      font-family: Arial, sans-serif;
+      line-height: 1.8;
+      color: #6d6571;
+    }
+
+    .thought-content.open {
+      max-height: 190px;
+      padding: 0 22px 21px;
+    }
+
+    .final-note {
+      text-align: center;
+    }
+
+    .final-note p {
+      text-align: center;
+    }
+
+    .signature {
+      margin-top: 22px;
+      font-family: Georgia, serif !important;
+      font-style: italic;
+      color: #514657 !important;
+    }
+
+    .hidden-message {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: .7s ease;
+    }
+
+    .hidden-message.show {
+      max-height: 300px;
+      opacity: 1;
+      margin-top: 25px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 42px 0 18px;
+      color: #918894;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    .heart-line {
+      margin-top: 18px;
+      font-size: 18px;
+      letter-spacing: 5px;
+      opacity: .65;
+    }
+
+
+    /* Playful scroll challenge */
+    body.scroll-challenge {
+      overscroll-behavior-y: none;
+    }
+
+    .scroll-challenge-overlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0;
+      transition: opacity .25s ease;
+    }
+
+    .scroll-challenge-overlay.active { opacity: 1; }
+
+    .scroll-glow {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 130px;
+      height: 130px;
+      transform: translate(-50%, -50%) scale(.55);
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,.9);
+      box-shadow: 0 0 0 12px rgba(255,220,235,.18), 0 0 55px rgba(218,221,255,.55);
+      opacity: 0;
+    }
+
+    .scroll-challenge-overlay.active .scroll-glow {
+      animation: scrollPulse .7s ease-out;
+    }
+
+    .scroll-message {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) translateY(15px);
+      width: min(86vw, 330px);
+      padding: 16px 20px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.86);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 16px 45px rgba(75,55,90,.18);
+      text-align: center;
+      font-family: Arial, sans-serif;
+      color: #514657;
+      font-size: 14px;
+      line-height: 1.55;
+      opacity: 0;
+    }
+
+    .scroll-challenge-overlay.active .scroll-message {
+      animation: challengePop .7s cubic-bezier(.2,.9,.25,1.2) forwards;
+    }
+
+    .scroll-message b { display:block; font-family: Georgia, serif; font-size:19px; margin-bottom:4px; }
+
+    .scroll-spark {
+      position: absolute;
+      font-size: 22px;
+      opacity: 0;
+    }
+
+    .scroll-challenge-overlay.active .scroll-spark { animation: sparkFly .7s ease-out forwards; }
+    .spark1 { left: 27%; top: 43%; }
+    .spark2 { left: 68%; top: 39%; animation-delay: .05s !important; }
+    .spark3 { left: 35%; top: 65%; animation-delay: .1s !important; }
+    .spark4 { left: 64%; top: 67%; animation-delay: .15s !important; }
+
+    @keyframes scrollPulse {
+      0% { transform: translate(-50%,-50%) scale(.55); opacity: 0; }
+      25% { opacity: 1; }
+      100% { transform: translate(-50%,-50%) scale(1.8); opacity: 0; }
+    }
+
+    @keyframes challengePop {
+      0% { opacity:0; transform:translate(-50%,-50%) translateY(18px) scale(.86); }
+      55% { opacity:1; transform:translate(-50%,-50%) translateY(-3px) scale(1.04); }
+      100% { opacity:1; transform:translate(-50%,-50%) translateY(0) scale(1); }
+    }
+
+    @keyframes sparkFly {
+      0% { opacity:0; transform:scale(.4) translate(0,0) rotate(0); }
+      25% { opacity:1; }
+      100% { opacity:0; transform:scale(1.2) translate(var(--dx),var(--dy)) rotate(35deg); }
+    }
+
+
+    /* Stronger scroll challenge feedback */
+    body.scroll-trick { animation: pageNudge .42s cubic-bezier(.25,.8,.35,1); }
+    .scroll-challenge-overlay.active .scroll-message { animation: challengePop .7s cubic-bezier(.2,.9,.25,1.2) forwards, messageWiggle .42s .12s ease-in-out; }
+    .scroll-challenge-overlay.active::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(255,255,255,.22), transparent 38%);
+      animation: flashFade .55s ease-out forwards;
+    }
+    @keyframes pageNudge {
+      0% { transform: translateY(0) rotate(0); }
+      25% { transform: translateY(3px) rotate(-.18deg); }
+      55% { transform: translateY(-4px) rotate(.18deg); }
+      100% { transform: translateY(0) rotate(0); }
+    }
+    @keyframes messageWiggle {
+      0%,100% { margin-left: 0; }
+      25% { margin-left: -4px; }
+      75% { margin-left: 4px; }
+    }
+    @keyframes flashFade { 0% { opacity:1; } 100% { opacity:0; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .scroll-challenge-overlay, .scroll-glow, .scroll-message, .scroll-spark { animation: none !important; transition: none !important; }
+    }
+
+    @media (max-width: 700px) {
+      .card { padding: 44px 21px; }
+      .page { padding-top: 12px; }
+      .section { padding: 42px 0; }
+      .memory { padding: 27px 21px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="floating" aria-hidden="true">
+    <span>✦</span>
+    <span>♡</span>
+    <span>✿</span>
+    <span>🎈</span>
+    <span>✦</span>
+  </div>
+
+
+  <div class="scroll-challenge-overlay" id="scrollChallenge" aria-hidden="true">
+    <div class="scroll-glow"></div>
+    <div class="scroll-message"><b>Whoa! 😄</b>Easy there, ANGLE…<br>the page is making you work for the next part ✨</div>
+    <span class="scroll-spark spark1" style="--dx:-55px;--dy:-65px">✦</span>
+    <span class="scroll-spark spark2" style="--dx:55px;--dy:-60px">♡</span>
+    <span class="scroll-spark spark3" style="--dx:-45px;--dy:55px">✿</span>
+    <span class="scroll-spark spark4" style="--dx:48px;--dy:58px">✨</span>
+  </div>
+
+  <main class="page">
+
+    <!-- ================= OPENING ================= -->
+    <section class="hero">
+      <div class="card">
+
+        <div class="small">A little birthday page for you</div>
+
+        <h1>Happy Birthday,<br>my dear ANGLE 🎂</h1>
+
+        <div class="birthday-line">
+          Another year, another collection of moments ✨
+        </div>
+
+        <p>
+          I wanted to make something a little different for your birthday —
+          a small page made from wishes, thoughts, and memories.
+          Some happened in person, and some happened through a screen,
+          but they all became part of the time we've shared.
+        </p>
+
+        <button class="button" onclick="revealMessage()">
+          Tap for your birthday wish 🎁
+        </button>
+
+        <div class="hidden-message" id="surprise">
+          <p>
+            Wishing you a very Happy Birthday, ANGLE! 🎉
+            May this year bring you peaceful days, good people,
+            unexpected reasons to smile, and lots of moments
+            you'll be happy to remember.
+          </p>
+        </div>
+
+        <div class="heart-line">✦ · ♡ · ✦</div>
+      </div>
+    </section>
+
+
+    <!-- ================= BIRTHDAY WISHES ================= -->
+    <section class="section">
+      <h2 class="section-title">Birthday Wishes 🌷</h2>
+      <div class="section-subtitle">
+        A few words, especially for today.
+      </div>
+
+      <div class="memory">
+        <h3>For your new year ✨</h3>
+        <p>
+          I hope this new chapter brings you closer to the things you want,
+          gives you plenty of reasons to smile, and fills your days with
+          people and moments that make life a little better.
+        </p>
+      </div>
+
+      <div class="memory">
+        <h3>For all the days ahead 🎂</h3>
+        <p>
+          May you keep growing, learning, laughing, and enjoying the little
+          things. I hope the coming year gives you memories you'll look back
+          on with a smile.
+        </p>
+      </div>
+
+      <div class="memory">
+        <h3>And one simple wish 🌸</h3>
+        <p>
+          Stay happy, stay yourself, and keep finding reasons to enjoy the
+          journey. Have a beautiful birthday and an even better year ahead!
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ================= SHARED TIME ================= -->
+    <section class="section">
+      <h2 class="section-title">The Time We've Shared 💭</h2>
+      <div class="section-subtitle">
+        Because distance doesn't erase a good memory.
+      </div>
+
+      <div class="memory">
+        <h3>From random chats to little moments 💬</h3>
+        <p>
+          We've shared conversations, random jokes, normal days, unexpected
+          topics, small updates, and those conversations that somehow make
+          time pass faster. Not every moment had to be special to become
+          memorable.
+        </p>
+      </div>
+
+      <div class="memory">
+        <h3>Even from far away 🌙</h3>
+        <p>
+          Some of the time we've shared happened through messages and online
+          chats rather than sitting in the same place. Different screens,
+          different places, sometimes different schedules — but still,
+          those conversations became part of the memories.
+        </p>
+      </div>
+
+      <div class="memory">
+        <h3>The little things count too ✨</h3>
+        <p>
+          A funny message, a random conversation, a shared thought, a reply
+          that came at just the right time — little things like these may
+          seem ordinary, but together they make a nice collection of moments.
+        </p>
+      </div>
+
+      <div class="memory">
+        <h3>Just worth remembering 🤍</h3>
+        <p>
+          I don't want to make every memory sound like a huge story.
+          Some things are nice simply because they happened. This page is
+          just a small way of appreciating the time we've shared so far.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ================= LITTLE THOUGHTS ================= -->
+    <section class="section">
+      <h2 class="section-title">Little Thoughts 💭</h2>
+      <div class="section-subtitle">
+        Tap each one to reveal it.
+      </div>
+
+      <div class="thoughts">
+
+        <div class="thought-card">
+          <button class="thought-button" onclick="toggleThought(0)">
+            ✦ A small thought
+          </button>
+          <div class="thought-content" id="thought0">
+            Good friends don't always need constant conversations.
+            Sometimes, simply knowing that someone is there is enough.
+          </div>
+        </div>
+
+        <div class="thought-card">
+          <button class="thought-button" onclick="toggleThought(1)">
+            ✦ Another little thought
+          </button>
+          <div class="thought-content" id="thought1">
+            Some connections are simple, comfortable, and quietly worth
+            appreciating — without needing to be anything more than that.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= FINAL MESSAGE ================= -->
+    <section class="section">
+      <h2 class="section-title">One Last Thing 💌</h2>
+
+      <div class="memory final-note">
+        <p>
+          Thank you for all the conversations, laughs, random topics,
+          shared moments, and the time we've spent talking — whether
+          sitting somewhere together or simply typing from different places.
+        </p>
+
+        <br>
+
+        <p>
+          Here's hoping there are many more good moments, funny
+          conversations, and happy memories ahead.
+        </p>
+
+        <br>
+
+        <p><b>Happy Birthday once again, my dear ANGLE! 🎂✨</b></p>
+
+        <p class="signature">Best wishes from your well-wisher, DEV</p>
+      </div>
+    </section>
+
+
+    <footer>
+      Made with a little thought for a special birthday 🌸
+    </footer>
+
+  </main>
+
+
+  <script>
+    function revealMessage() {
+      document.getElementById("surprise").classList.toggle("show");
+    }
+
+
+    // Playful touch-scroll challenge: every real upward/downward swipe briefly triggers a surprise.
+    (() => {
+      const overlay = document.getElementById("scrollChallenge");
+      let startY = null;
+      let lastTrigger = 0;
+
+      function challenge(direction = 0) {
+        const now = Date.now();
+        if (now - lastTrigger < 850) return;
+        lastTrigger = now;
+        overlay.classList.remove("active");
+        document.body.classList.remove("scroll-trick");
+        void overlay.offsetWidth;
+        void document.body.offsetWidth;
+        overlay.classList.add("active");
+        document.body.classList.add("scroll-trick");
+        setTimeout(() => {
+          overlay.classList.remove("active");
+          document.body.classList.remove("scroll-trick");
+        }, 820);
+      }
+
+      window.addEventListener("touchstart", e => {
+        if (e.touches.length === 1) startY = e.touches[0].clientY;
+      }, {passive:true});
+
+      window.addEventListener("touchend", e => {
+        if (startY === null) return;
+        const endY = e.changedTouches[0].clientY;
+        if (Math.abs(endY - startY) > 18) challenge(Math.sign(startY - endY));
+        startY = null;
+      }, {passive:true});
+
+      let wheelLock = false;
+      window.addEventListener("wheel", e => {
+        if (Math.abs(e.deltaY) < 12 || wheelLock) return;
+        wheelLock = true;
+        challenge(Math.sign(e.deltaY));
+        setTimeout(() => wheelLock = false, 850);
+      }, {passive:true});
+    })();
+
+    function toggleThought(number) {
+      document.getElementById("thought" + number).classList.toggle("open");
+    }
+  </script>
+
+</body>
+</html>
